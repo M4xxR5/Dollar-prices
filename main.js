@@ -1,24 +1,20 @@
 const dateTime = document.querySelector('#date-time');
-const oficialBuy = document.querySelector('#oficial-buy');
-const oficialSell = document.querySelector('#oficial-sell');
-const blueBuy = document.querySelector('#blue-buy');
-const blueSell = document.querySelector('#blue-sell');
+const oficial = document.querySelector('.oficial');
+const blue = document.querySelector('.blue');
 
-async function getJSON() {
-    const res = await fetch('https://api.bluelytics.com.ar/v2/latest');
+async function getJSON(str) {
+    const res = await fetch(`https://mercados.ambito.com/${str}/variacion`);
     const json = await res.json();
 
     return json;
 }
 
-(async function displayResults() {
-    const dollar = await getJSON()
+async function displayResults(str, node)  {
+    const dolar = await getJSON(str);
 
-    dateTime.textContent = new Date(dollar.last_update);
-    
-    oficialBuy.textContent = dollar.oficial.value_buy;
-    oficialSell.textContent = dollar.oficial.value_sell;
-    
-    blueBuy.textContent = dollar.blue.value_buy;
-    blueSell.textContent = dollar.blue.value_sell;
-})()
+    node.children[0].textContent = dolar.compra;
+    node.children[1].textContent = dolar.venta;
+}
+
+displayResults('/dolar/oficial', oficial);
+displayResults('/dolar/informal', blue);
