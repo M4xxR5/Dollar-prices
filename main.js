@@ -4,15 +4,21 @@ const oficialSell = document.querySelector('#oficial-sell');
 const blueBuy = document.querySelector('#blue-buy');
 const blueSell = document.querySelector('#blue-sell');
 
-(async () => {
+async function getJSON() {
     const res = await fetch('https://api.bluelytics.com.ar/v2/latest');
     const json = await res.json();
-    
-    dateTime.textContent = new Date(json.last_update);
 
-    oficialBuy.textContent = json.oficial.value_buy;
-    oficialSell.textContent = json.oficial.value_sell;
+    return json;
+}
+
+(async function displayResults() {
+    const dollar = await getJSON()
+
+    dateTime.textContent = new Date(dollar.last_update);
     
-    blueBuy.textContent = json.blue.value_buy;
-    blueSell.textContent = json.blue.value_sell;
+    oficialBuy.textContent = dollar.oficial.value_buy;
+    oficialSell.textContent = dollar.oficial.value_sell;
+    
+    blueBuy.textContent = dollar.blue.value_buy;
+    blueSell.textContent = dollar.blue.value_sell;
 })()
