@@ -6,27 +6,54 @@
 
 .container {
     display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
-table, td {
-    border: solid white 2px;
-    border-collapse: collapse;
+.widget {
+    display: flex;
+    flex-direction: column;
+    margin: 5% 0;
+    border: solid white 3px;
+    border-radius: 5px;
+    width: 30%;
+    align-items: stretch;
+    justify-content: space-between;
 }
 
-th {
+h3 {
     text-align: center;
+    font-variant: small-caps;
 }
 
-#oficial {
-    background-color: green;
+span {
+    display: block;
 }
 
-#blue {
-    background-color: blue;
+.buysellwrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-variant: small-caps;
 }
 
-td {
-    width: 6em;
+.referencewrapper {
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    font-variant: small-caps;
+}
+
+.variation {
+    display: flex;
+    justify-content: center;
+}
+
+.date {
+    font-size: 0.75em;
+    text-align: center;
+    color: #fffa;
+    font-weight: 300;
 }
