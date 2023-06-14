@@ -1,4 +1,4 @@
-* {
+body {
     font-family: sans-serif;
     background-color: #000;
     color: #fff;
@@ -21,6 +21,27 @@
     width: 30%;
     align-items: stretch;
     justify-content: space-between;
+    cursor: pointer;
+}
+
+.bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #000a;
+    z-index: 1; 
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+
+.modalBox {
+    width: 80%;
+    background-color: #0008;
+    border: solid white 3px;
+    border-radius: 5px;
 }
 
 h3 {
@@ -56,4 +77,8 @@ span {
     text-align: center;
     color: #fffa;
     font-weight: 300;
+}
+
+p {
+    padding: 1em;
 }
