@@ -24,7 +24,7 @@ body {
 }
 
 .widget__title {
-    margin: 1em;
+    padding-inline: 20px;
 }
 
 .widget__values {
