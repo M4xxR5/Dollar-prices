@@ -7,7 +7,6 @@ body {
 .container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
 .widget {
@@ -17,7 +16,7 @@ body {
     margin: 0.3em;
     border: solid white 3px;
     border-radius: 5px;
-    width: 45%;
+    width: 30%;
     align-items: stretch;
     justify-content: space-between;
     text-align: center;
@@ -78,10 +77,4 @@ body {
 
 .modal__close-text {
     text-align: center;
-}
-
-@media (min-width: 576px) {
-    .widget {
-        width: 30%;
-    }
 }
