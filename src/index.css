@@ -16,7 +16,7 @@ body {
     margin: 0.3em;
     border: solid white 3px;
     border-radius: 5px;
-    width: 30%;
+    width: 45%;
     align-items: stretch;
     justify-content: space-between;
     text-align: center;
@@ -68,4 +68,10 @@ body {
 
 .modal__close-text {
     text-align: center;
+}
+
+@media (min-width: 576px) {
+    .widget {
+        width: 30%;
+    }
 }
