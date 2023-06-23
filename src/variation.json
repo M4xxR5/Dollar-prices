@@ -1,0 +1,14 @@
+{
+  "up": {
+    "icon": "⯅",
+    "color": "#00FF7F"
+  },
+  "equal": {
+    "icon": "=",
+    "color": "#1E90FF"
+  },
+  "down": {
+    "icon": "⯆",
+    "color": "#FF4500"
+  }
+}

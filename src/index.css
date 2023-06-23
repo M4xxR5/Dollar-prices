@@ -6,25 +6,39 @@ body {
 
 .container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
     flex-wrap: wrap;
-    width: 100%;
 }
 
 .widget {
     display: flex;
     flex-direction: column;
-    margin: 5% 0;
+    padding-bottom: 20px;
+    margin: 0.3em;
     border: solid white 3px;
     border-radius: 5px;
     width: 30%;
     align-items: stretch;
     justify-content: space-between;
+    text-align: center;
     cursor: pointer;
 }
 
-.bg {
+.widget__title {
+    margin: 1em;
+}
+
+.widget__values {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.value {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal__background {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,48 +51,21 @@ body {
     left: 0px;
 }
 
-.modalBox {
+.modal {
     width: 80%;
     background-color: #0008;
     border: solid white 3px;
     border-radius: 5px;
 }
 
-h3 {
+.modal__title {
     text-align: center;
-    font-variant: small-caps;
 }
 
-span {
-    display: block;
-}
-
-.buysellwrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    font-variant: small-caps;
-}
-
-.referencewrapper {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    font-variant: small-caps;
-}
-
-.variation {
-    display: flex;
-    justify-content: center;
-}
-
-.date {
-    font-size: 0.75em;
-    text-align: center;
-    color: #fffa;
-    font-weight: 300;
-}
-
-p {
+.modal__description {
     padding: 1em;
+}
+
+.modal__close-text {
+    text-align: center;
 }
