@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react"
 import dollarURLs from "../dollarURLs.json"
 import variationsJSON from "../variation.json"
-import Value from "./Value"
-import Modal from "./Modal"
+import Value from "../components/Value"
+import Modal from "../components/Modal"
 
 export function Widget({url}) {
     const name = dollarURLs[url].name
