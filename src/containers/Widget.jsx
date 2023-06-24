@@ -31,7 +31,6 @@ export function Widget({url}) {
     
     return (
         <>
-        
         <div className="widget" onClick={handleClick}>
             <h3 className="widget__title">{name}</h3>
             {data.valor ? (
@@ -43,7 +42,10 @@ export function Widget({url}) {
                 </div>
             )}
             <div className="widget__variation" style={{ color: `${color}` }}>
-                {icon} {data.variacion}
+            <svg width="0.7em" height="0.7em" viewBox="0 0 100 100">
+                <polygon points={icon} fill={color} />
+            </svg>
+                 {data.variacion}
             </div>
             <span className="widget__date">
                 {data.fecha}

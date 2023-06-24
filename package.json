@@ -30,6 +30,7 @@
     "html-webpack-plugin": "^5.5.3",
     "prettier": "^2.8.8",
     "style-loader": "^3.3.3",
+    "svg-inline-loader": "^0.8.2",
     "webpack": "^5.87.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
