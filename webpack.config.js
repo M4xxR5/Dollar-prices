@@ -1,11 +1,12 @@
 const path = require("path");
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-    entry: "./src/index.jsx",
+    entry: './src/index.jsx',
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "bundle.[contentHash].js",
+        filename: "bundle.[contenthash].js",
     },
     resolve: {
         extensions: [".js", ".jsx"],
@@ -15,29 +16,34 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader",
-                },
-            },
-            {
-                test: /\.html$/,
-                use: [
-                    {
-                        loader: "html-loader",
-                    },
-                ],
+                loader: 'babel-loader',
+                options: {
+                    presets: [
+                        '@babel/preset-env',
+                        [
+                            '@babel/preset-react',
+                            {
+                                runtime: 'automatic'
+                            }
+                        ]
+                    ]
+                }
             },
             {
                 test: /\.css$/,
-                use: ["style-loader", "css-loader" ],
-                sideEffects: true,
-            },
-        ],
+                use: ['style-loader', 'css-loader']
+            }
+        ]
     },
     plugins: [
-        new HtmlWebPackPlugin({
-            template: "./public/index.html",
-            filename: "./index.html"
-        }),
+        new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin(
+            {
+                template: './public/index.html'
+            }
+        )
     ],
-};
+    devServer: {
+        open: true
+    }
+}

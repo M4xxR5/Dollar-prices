@@ -4,8 +4,8 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "webpack-cli serve --open --mode development",
-    "build": "webpack --mode production",
+    "start": "webpack serve --mode=development",
+    "build": "webpack --mode=production",
     "format": "prettier --write .",
     "lint": "eslint --fix . --ext .js,.jsx"
   },
@@ -17,6 +17,7 @@
     "@babel/preset-env": "^7.22.5",
     "@babel/preset-react": "^7.22.5",
     "babel-loader": "^9.1.2",
+    "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.8.1",
     "eslint": "^8.43.0",
     "eslint-config-prettier": "^8.8.0",
